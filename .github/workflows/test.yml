@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: build and test
-        run: bash -xv ./src/mypkg/test/test.bash
+        run: bash -xv ./test/test.bash
