@@ -1,30 +1,20 @@
 import rclpy
 from rclpy.node import Node
-from std_srvs.srv import Trigger
-from datetime import datetime
+from std_msgs.msg import Int16
 
-class DateNode(Node):
+rclpy.init()
+node = Node("talker")
+pub = node.create_publisher(Int16, "countup", 10)
+n = 0
 
-    def __init__(self):
-        super().__init__('date_node')
-        # サービスを作成。リクエストをTrigger型で受け取り、レスポンスに日付を返す。
-        self.srv = self.create_service(Trigger, 'get_current_date', self.get_current_date)
 
-    def get_current_date(self, request, response):
-        # 現在の日付を取得
-        current_date = datetime.now().strftime('%Y-%m-%d')  # 例: 2025-01-02
-        # 日付をレスポンスにセット
-        self.get_logger().info(f"現在の日付: {current_date}")
-        response.success = True
-        response.message = current_date
-        return response
+def cb():
+    global n
+    msg = Int16()
+    msg.data = n
+    pub.publish(msg)
+    n += 1
 
-def main(args=None):
-    rclpy.init(args=args)
-    date_node = DateNode()
-    rclpy.spin(date_node)
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
-
+def main():
+    node.create_timer(0.5, cb)
+    rclpy.spin(node)
