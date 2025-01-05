@@ -17,7 +17,6 @@ def cb():
     msg = Int16()
     msg.data = n
     pub.publish(msg)
-    node.get_logger().info(f"olympic year: {n}")
     n += 2
 
 def main():
