@@ -8,7 +8,7 @@ def generate_launch_description():
 
     olympic = launch_ros.actions.Node(
         package='mypkg',
-        executable='olympic',
+        executable='talker',
         )
     listener = launch_ros.actions.Node(
         package='mypkg',
@@ -16,4 +16,4 @@ def generate_launch_description():
         output='screen'
         )
 
-    return launch.LaunchDescription([olympic, listener])
+    return launch.LaunchDescription([talker, listener])

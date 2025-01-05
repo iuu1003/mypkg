@@ -23,7 +23,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'olympic = mypkg.olympic:main',
+            'talker = mypkg.talker:main',
             'listener = mypkg.listener:main',
         ],
     },
