@@ -13,7 +13,7 @@ def cb():
     msg = Int16()
     msg.data = n
     pub.publish(msg)
-    n += 0
+    n += 1
 
 def main():
     node.create_timer(0.5, cb)
