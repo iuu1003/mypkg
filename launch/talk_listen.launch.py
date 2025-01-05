@@ -6,7 +6,7 @@ import launch_ros.actions
 
 def generate_launch_description():
 
-    Olympic = launch_ros.actions.Node(
+    olympic = launch_ros.actions.Node(
         package='mypkg',
         executable='olympic',
         )
