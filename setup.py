@@ -24,7 +24,6 @@ setup(
     entry_points={
         'console_scripts': [
             'talker = mypkg.olympic:main',
-            'listener = mypkg.listener:main',
         ],
     },
 )
