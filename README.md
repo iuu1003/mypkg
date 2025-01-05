@@ -1,13 +1,17 @@
 # olympicコマンド
-[![test](https://github.com/iuu1003/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/iuu1003/mypkg/actions/workflows/test.yml)
+[![test](https://github.com/iuu1003/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/iuu1003/mypkg/actions/workflows/test.yml)  
 オリンピックが開催される年を表示させます.
 
 ## 概要
-- このプログラムは、オリンピックが開催される年を表示します.
+- このプログラムは、夏季および冬季オリンピックが開催される年を表示します.
+
+- オリンピックが初めて開催された1896年からスタートします.
 
 ## 使い方
 実行方法の例  
 `ros2 run mypkg olympic`
+別の端末で以下を実行  
+`ros2 topic echo /countup`
 
 実行結果の例
 ```
