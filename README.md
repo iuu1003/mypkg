@@ -9,7 +9,7 @@
 
 ## 使い方
 実行方法の例  
-`ros2 run mypkg olympic`
+`ros2 run mypkg olympic`  
 別の端末で以下を実行  
 `ros2 topic echo /countup`
 
