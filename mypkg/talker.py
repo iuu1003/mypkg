@@ -7,7 +7,7 @@ from rclpy.node import Node
 from std_msgs.msg import Int16
 
 rclpy.init()
-node = Node("olympic")
+node = Node("talker")
 pub = node.create_publisher(Int16, "countup", 10)
 n = 1896
 
