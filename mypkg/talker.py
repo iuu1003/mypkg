@@ -17,13 +17,8 @@ def cb():
     msg = Int16()
     msg.data = n
     pub.publish(msg)
-    node.get_logger().info(f"Published: {msg.data}")
     n += 1
 
 def main():
-    node.get_logger().info("Node started!")
     node.create_timer(0.5, cb)
     rclpy.spin(node)
-
-if __name__ == "__main__":
-    main()
